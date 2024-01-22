@@ -26,8 +26,7 @@ export const Home = () => {
         <Col
           xs={24}
           sm={24}
-          xl={8}
-          style={{ height: '460px' }}>
+          xl={8}>
           <TotalCountCard
             resource='companies'
             isLoading={isLoading}
@@ -38,8 +37,7 @@ export const Home = () => {
         <Col
           xs={24}
           sm={24}
-          xl={8}
-          style={{ height: '460px' }}>
+          xl={8}>
           <TotalCountCard
             resource='contacts'
             isLoading={isLoading}
@@ -50,8 +48,7 @@ export const Home = () => {
         <Col
           xs={24}
           sm={24}
-          xl={8}
-          style={{ height: '460px' }}>
+          xl={8}>
           <TotalCountCard
             resource='deals'
             isLoading={isLoading}

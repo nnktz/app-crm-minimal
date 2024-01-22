@@ -15,7 +15,14 @@ import routerBindings, {
 import { App as AntdApp } from 'antd';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 
-import { CompanyList, ForgotPassword, Home, Login, Register } from './pages';
+import {
+  CompanyList,
+  Create,
+  ForgotPassword,
+  Home,
+  Login,
+  Register,
+} from './pages';
 import Layout from './components/layout';
 import { resources } from './config/resources';
 
@@ -68,10 +75,16 @@ function App() {
                     index
                     element={<Home />}
                   />
-                  <Route
-                    path='/companies'
-                    element={<CompanyList />}
-                  />
+                  <Route path='/companies'>
+                    <Route
+                      index
+                      element={<CompanyList />}
+                    />
+                    <Route
+                      path='new'
+                      element={<Create />}
+                    />
+                  </Route>
                 </Route>
               </Routes>
               <RefineKbar />
