@@ -36,7 +36,7 @@ export const Create = () => {
     mutationMode: 'pessimistic',
     onMutationSuccess: goToListPage,
     meta: {
-      gqlQuery: CREATE_COMPANY_MUTATION,
+      gqlMutation: CREATE_COMPANY_MUTATION,
     },
   });
 

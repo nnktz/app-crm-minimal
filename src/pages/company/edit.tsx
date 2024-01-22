@@ -37,7 +37,7 @@ export const Edit = () => {
       mode: 'off',
     },
     meta: {
-      gqlQuery: USERS_SELECT_QUERY,
+      gqlMutation: USERS_SELECT_QUERY,
     },
   });
 
