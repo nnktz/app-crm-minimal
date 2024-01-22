@@ -17,12 +17,13 @@ import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 
 import {
   CompanyList,
-  Create,
-  Edit,
+  Create as CompanyCreate,
+  Edit as CompanyEdit,
   ForgotPassword,
   Home,
   Login,
   Register,
+  TaskList,
 } from './pages';
 import Layout from './components/layout';
 import { resources } from './config/resources';
@@ -83,11 +84,17 @@ function App() {
                     />
                     <Route
                       path='new'
-                      element={<Create />}
+                      element={<CompanyCreate />}
                     />
                     <Route
                       path='edit/:id'
-                      element={<Edit />}
+                      element={<CompanyEdit />}
+                    />
+                  </Route>
+                  <Route path='/tasks'>
+                    <Route
+                      index
+                      element={<TaskList />}
                     />
                   </Route>
                 </Route>
