@@ -18,6 +18,7 @@ import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import {
   CompanyList,
   Create,
+  Edit,
   ForgotPassword,
   Home,
   Login,
@@ -83,6 +84,10 @@ function App() {
                     <Route
                       path='new'
                       element={<Create />}
+                    />
+                    <Route
+                      path='edit/:id'
+                      element={<Edit />}
                     />
                   </Route>
                 </Route>
