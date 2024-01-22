@@ -15,7 +15,7 @@ import routerBindings, {
 import { App as AntdApp } from 'antd';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 
-import { ForgotPassword, Home, Login, Register } from './pages';
+import { CompanyList, ForgotPassword, Home, Login, Register } from './pages';
 import Layout from './components/layout';
 import { resources } from './config/resources';
 
@@ -67,6 +67,10 @@ function App() {
                   <Route
                     index
                     element={<Home />}
+                  />
+                  <Route
+                    path='/companies'
+                    element={<CompanyList />}
                   />
                 </Route>
               </Routes>
