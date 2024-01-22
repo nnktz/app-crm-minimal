@@ -4,7 +4,12 @@ import { useCustom } from '@refinedev/core';
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from '@/graphql/queries';
 import { DashboardTotalCountsQuery } from '@/graphql/types';
 
-import { DealChart, TotalCountCard, UpcomingEvents } from '@/components';
+import {
+  DealChart,
+  LatestActivities,
+  TotalCountCard,
+  UpcomingEvents,
+} from '@/components';
 
 export const Home = () => {
   const { data, isLoading } = useCustom<DashboardTotalCountsQuery>({
@@ -72,6 +77,22 @@ export const Home = () => {
           xl={8}
           style={{ height: '460px' }}>
           <DealChart />
+        </Col>
+      </Row>
+
+      <Row
+        gutter={[32, 32]}
+        style={{ marginTop: '32px' }}>
+        <Col
+          xs={24}
+          sm={24}
+          xl={8}
+          style={{ height: '460px' }}>
+          <UpcomingEvents />
+        </Col>
+
+        <Col xs={24}>
+          <LatestActivities />
         </Col>
       </Row>
     </div>
