@@ -71,7 +71,7 @@ export const Home = () => {
         <Col
           xs={24}
           sm={24}
-          xl={8}
+          xl={16}
           style={{ height: '460px' }}>
           <DealChart />
         </Col>
@@ -80,14 +80,6 @@ export const Home = () => {
       <Row
         gutter={[32, 32]}
         style={{ marginTop: '32px' }}>
-        <Col
-          xs={24}
-          sm={24}
-          xl={8}
-          style={{ height: '460px' }}>
-          <UpcomingEvents />
-        </Col>
-
         <Col xs={24}>
           <LatestActivities />
         </Col>
