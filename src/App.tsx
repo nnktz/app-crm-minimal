@@ -24,6 +24,7 @@ import {
   Login,
   Register,
   TaskList,
+  CreateTask,
 } from './pages';
 import Layout from './components/layout';
 import { resources } from './config/resources';
@@ -91,10 +92,16 @@ function App() {
                       element={<CompanyEdit />}
                     />
                   </Route>
-                  <Route path='/tasks'>
+                  <Route
+                    path='/tasks'
+                    element={
+                      <TaskList>
+                        <Outlet />
+                      </TaskList>
+                    }>
                     <Route
-                      index
-                      element={<TaskList />}
+                      path='new'
+                      element={<CreateTask />}
                     />
                   </Route>
                 </Route>

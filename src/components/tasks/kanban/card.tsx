@@ -38,13 +38,7 @@ type ProjectCardProps = {
   }[];
 };
 
-const ProjectCard = ({
-  id,
-  title,
-  updatedAt,
-  dueDate,
-  users,
-}: ProjectCardProps) => {
+const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
   const { token } = theme.useToken();
   const { edit } = useNavigation();
   const { mutate } = useDelete();
@@ -77,7 +71,7 @@ const ProjectCard = ({
     ];
 
     return dropdownItems;
-  }, []);
+  }, [edit, id, mutate]);
 
   const dueDateOptions = useMemo(() => {
     if (!dueDate) {
@@ -90,7 +84,7 @@ const ProjectCard = ({
       color: getDateColor({ date: dueDate }) as string,
       text: date.format('MMM DD'),
     };
-  }, []);
+  }, [dueDate]);
 
   return (
     <ConfigProvider
@@ -111,7 +105,11 @@ const ProjectCard = ({
         extra={
           <Dropdown
             trigger={['click']}
-            menu={{ items: dropdownItems }}
+            menu={{
+              items: dropdownItems,
+              onPointerDown: (e) => e.stopPropagation(),
+              onClick: (e) => e.domEvent.stopPropagation(),
+            }}
             placement='bottom'
             arrow={{ pointAtCenter: true }}>
             <Button
