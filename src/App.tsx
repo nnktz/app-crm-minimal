@@ -25,6 +25,7 @@ import {
   Register,
   TaskList,
   CreateTask,
+  EditTask,
 } from './pages';
 import Layout from './components/layout';
 import { resources } from './config/resources';
@@ -102,6 +103,14 @@ function App() {
                     <Route
                       path='new'
                       element={<CreateTask />}
+                    />
+                    <Route
+                      path='new'
+                      element={<CreateTask />}
+                    />
+                    <Route
+                      path='edit/:id'
+                      element={<EditTask />}
                     />
                   </Route>
                 </Route>
