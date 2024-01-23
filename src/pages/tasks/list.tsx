@@ -4,8 +4,7 @@ import { useMemo } from 'react';
 import { DragEndEvent } from '@dnd-kit/core';
 
 import { TASKS_QUERY, TASK_STAGES_QUERY } from '@/graphql/queries';
-import { TaskStage } from '@/graphql/schema.types';
-import { TasksQuery } from '@/graphql/types';
+import { TaskStagesQuery, TasksQuery } from '@/graphql/types';
 import { UPDATE_TASK_STAGE_MUTATION } from '@/graphql/mutations';
 
 import {
@@ -17,6 +16,9 @@ import KanbanColumn from '@/components/tasks/kanban/column';
 import KanbanItem from '@/components/tasks/kanban/item';
 import { KanbanAddCardButton } from '@/components/tasks/kanban/add-card-button';
 import { KanbanColumnSkeleton, ProjectCardSkeleton } from '@/components';
+
+type Task = GetFieldsFromList<TasksQuery>;
+type TaskStage = GetFieldsFromList<TaskStagesQuery> & { tasks: Task[] };
 
 export const TaskList = ({ children }: React.PropsWithChildren) => {
   const { replace } = useNavigation();

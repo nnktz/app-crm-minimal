@@ -7,7 +7,7 @@ import {
   List,
   useTable,
 } from '@refinedev/antd';
-import { getDefaultFilter, useGo } from '@refinedev/core';
+import { HttpError, getDefaultFilter, useGo } from '@refinedev/core';
 import { Input, Space, Table } from 'antd';
 import { GetFieldsFromList } from '@refinedev/nestjs-query';
 
@@ -21,7 +21,10 @@ import { Text } from '@/components/text';
 
 export const CompanyList = ({ children }: React.PropsWithChildren) => {
   const go = useGo();
+
   const { tableProps, filters } = useTable<
+    GetFieldsFromList<CompaniesListQuery>,
+    HttpError,
     GetFieldsFromList<CompaniesListQuery>
   >({
     resource: 'companies',
